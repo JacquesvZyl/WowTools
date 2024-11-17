@@ -1,6 +1,6 @@
 ﻿namespace ReagentTierUpProfitEstimation
 {
-    partial class Form1
+    partial class RefinementForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RefinementForm));
             MainInputTextbox = new RichTextBox();
             MainInputLabel = new Label();
             MainInputButton = new Button();
@@ -73,7 +74,6 @@
             resultsViewAfter.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resultsViewAfter.Location = new Point(751, 75);
             resultsViewAfter.Name = "resultsViewAfter";
-            resultsViewAfter.RowTemplate.Height = 25;
             resultsViewAfter.Size = new Size(427, 373);
             resultsViewAfter.TabIndex = 3;
             resultsViewAfter.CellContentClick += Results_CellContentClick;
@@ -83,7 +83,6 @@
             resultViewBefore.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resultViewBefore.Location = new Point(286, 75);
             resultViewBefore.Name = "resultViewBefore";
-            resultViewBefore.RowTemplate.Height = 25;
             resultViewBefore.Size = new Size(427, 373);
             resultViewBefore.TabIndex = 4;
             // 
@@ -107,7 +106,7 @@
             label2.Text = "Profit after Auctionhouse cut";
             label2.Click += label2_Click;
             // 
-            // Form1
+            // RefinementForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -119,7 +118,8 @@
             Controls.Add(MainInputButton);
             Controls.Add(MainInputLabel);
             Controls.Add(MainInputTextbox);
-            Name = "Form1";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "RefinementForm";
             Text = "Profit Estimation";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)resultsViewAfter).EndInit();

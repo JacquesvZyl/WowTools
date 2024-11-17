@@ -20,12 +20,12 @@ namespace ReagentTierUpProfitEstimation
             services.AddTransient<IReagentRefinement, ReagentRefinement>();
             services.AddTransient<IUtilities, Utilities>();
             services.AddTransient<IUI, UI>();
-            services.AddTransient<Form1>();
+            services.AddTransient<RefinementForm>();
 
 
             using (var serviceProvider = services.BuildServiceProvider())
             {
-                var form = serviceProvider.GetRequiredService<Form1>();
+                var form = serviceProvider.GetRequiredService<RefinementForm>();
                 Application.Run(form);
             }
         }

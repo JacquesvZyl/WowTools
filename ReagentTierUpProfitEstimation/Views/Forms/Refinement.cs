@@ -3,15 +3,15 @@ using ReagentTierUpProfitEstimation.Services.ReagentRefinement;
 using ReagentTierUpProfitEstimation.Views.UI;
 using System.Globalization;
 using System.Windows.Forms;
-using static ReagentTierUpProfitEstimation.Form1;
+using static ReagentTierUpProfitEstimation.RefinementForm;
 
 namespace ReagentTierUpProfitEstimation
 {
-    public partial class Form1 : Form
+    public partial class RefinementForm : Form
     {
         private readonly IReagentRefinement _refinement;
         private readonly IUI _ui;
-        public Form1(IReagentRefinement reagentRefinement,IUI uI)
+        public RefinementForm(IReagentRefinement reagentRefinement,IUI uI)
         {
             _refinement = reagentRefinement;
             _ui = uI;
