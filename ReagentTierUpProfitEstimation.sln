@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReagentTierUpProfitEstimation", "ReagentTierUpProfitEstimation\ReagentTierUpProfitEstimation.csproj", "{493E41F8-FD86-4774-AF5C-E2733059BDCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{493E41F8-FD86-4774-AF5C-E2733059BDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{493E41F8-FD86-4774-AF5C-E2733059BDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{493E41F8-FD86-4774-AF5C-E2733059BDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{493E41F8-FD86-4774-AF5C-E2733059BDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3B7D565-FDAC-45F1-8DF8-C59FC35B93D6}
+	EndGlobalSection
+EndGlobal
