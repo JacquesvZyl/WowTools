@@ -56,9 +56,9 @@ namespace ReagentTierUpProfitEstimation.Services.ReagentRefinement
                 var tier3Price = group.ItemList.Where(c => c.Tier == "3").FirstOrDefault();
 
 
-                var tier1PriceValue = (tier1Price?.Price ?? 0) / 10000;
-                var tier2PriceValue = (tier2Price?.Price ?? 0) / 10000;
-                var tier3PriceValue = (tier3Price?.Price ?? 0) / 10000;
+                var tier1PriceValue = (tier1Price?.Price ?? 0);
+                var tier2PriceValue = (tier2Price?.Price ?? 0);
+                var tier3PriceValue = (tier3Price?.Price ?? 0);
 
                 var tier1to2before = (tier2PriceValue - (tier1PriceValue * 5)).ToString("0.00");
                 var tier2to3before = (tier3PriceValue - (tier2PriceValue * 5)).ToString("0.00");

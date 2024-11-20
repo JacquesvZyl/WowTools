@@ -42,6 +42,7 @@
             // 
             // MainInputTextbox
             // 
+            MainInputTextbox.BackColor = SystemColors.ControlDark;
             MainInputTextbox.Location = new Point(12, 75);
             MainInputTextbox.Name = "MainInputTextbox";
             MainInputTextbox.Size = new Size(242, 373);
@@ -52,6 +53,7 @@
             // MainInputLabel
             // 
             MainInputLabel.AutoSize = true;
+            MainInputLabel.ForeColor = Color.White;
             MainInputLabel.Location = new Point(12, 48);
             MainInputLabel.Name = "MainInputLabel";
             MainInputLabel.Size = new Size(225, 15);
@@ -61,12 +63,15 @@
             // 
             // MainInputButton
             // 
+            MainInputButton.BackColor = Color.DarkOrange;
+            MainInputButton.BackgroundImageLayout = ImageLayout.None;
+            MainInputButton.FlatStyle = FlatStyle.Popup;
             MainInputButton.Location = new Point(560, 480);
             MainInputButton.Name = "MainInputButton";
             MainInputButton.Size = new Size(153, 23);
             MainInputButton.TabIndex = 2;
-            MainInputButton.Text = "Show me the money";
-            MainInputButton.UseVisualStyleBackColor = true;
+            MainInputButton.Text = "Generate";
+            MainInputButton.UseVisualStyleBackColor = false;
             MainInputButton.Click += button1_Click;
             // 
             // resultsViewAfter
@@ -89,6 +94,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.White;
             label1.Location = new Point(422, 48);
             label1.Name = "label1";
             label1.Size = new Size(170, 15);
@@ -99,6 +105,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(869, 48);
             label2.Name = "label2";
             label2.Size = new Size(160, 15);
@@ -110,6 +117,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DimGray;
             ClientSize = new Size(1195, 515);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -119,8 +127,11 @@
             Controls.Add(MainInputLabel);
             Controls.Add(MainInputTextbox);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(1211, 554);
+            MinimumSize = new Size(1211, 554);
             Name = "RefinementForm";
-            Text = "Profit Estimation";
+            Text = "Refinement";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)resultsViewAfter).EndInit();
             ((System.ComponentModel.ISupportInitialize)resultViewBefore).EndInit();
