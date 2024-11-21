@@ -14,5 +14,6 @@ namespace ReagentTierUpProfitEstimation.Services.Utilities
         string ReturnProfitMarginPercentage(double buyPrice, double sellPrice);
         double ParsePercentage(string percentageString);
         ProspectingSettings LoadProspectingSettings();
+        List<Item> ReturnItemListFromString(string inputString);
     }
 }

@@ -33,7 +33,7 @@ namespace WoWTools.Views.Forms
 
         private void thaumaturgyBtn_Click(object sender, EventArgs e)
         {
-            ProspectingForm thaumaturgyForm = new ProspectingForm(_utilities,_prospecting);
+            ProspectingForm thaumaturgyForm = new ProspectingForm(_uiService,_prospecting);
             thaumaturgyForm.Show();
 
         }

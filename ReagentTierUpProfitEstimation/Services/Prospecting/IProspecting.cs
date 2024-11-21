@@ -9,6 +9,6 @@ namespace WoWTools.Services.Prospecting
 {
     public interface IProspecting
     {
-        double ReturnAvgPerCraft(Item reagent, List<Item> reagents);
+        void SetProspectingResults(string input, DataGridView dataGrid);
     }
 }

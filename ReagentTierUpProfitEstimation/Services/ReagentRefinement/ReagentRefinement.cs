@@ -18,15 +18,8 @@ namespace ReagentTierUpProfitEstimation.Services.ReagentRefinement
 
         public void ReturnRefinementResults (RichTextBox richTextBox, DataGridView resultViewBefore, DataGridView resultViewAfter)
         {
-            // Split the input into lines
-            string[] lines = richTextBox.Text
-                .Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
-                .Skip(1)
-                .ToArray();
 
-
-            // Parse each line into an Item object
-            List<Item> items = lines.Select(line => utilities.ParseLineToItem(line)).ToList();
+            var items = utilities.ReturnItemListFromString(richTextBox.Text);
 
             //var itemGroups = new itemGroups();
 

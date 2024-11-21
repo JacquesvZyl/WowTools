@@ -14,7 +14,6 @@ namespace WoWTools.Services.Prospecting
         private readonly IUtilities _utilities;
         private readonly ProspectingSettings _settings;
 
-
         public Prospecting(IUtilities utilities) 
         {
             _utilities = utilities;
@@ -23,7 +22,7 @@ namespace WoWTools.Services.Prospecting
         }
 
 
-        public double ReturnAvgPerCraft(Item reagent, List<Item> reagents)
+        private double ReturnAvgPerCraft(Item reagent, List<Item> reagents)
         {
 
             var values = new[]
@@ -86,7 +85,37 @@ namespace WoWTools.Services.Prospecting
             return amber?.Price * yield ?? 0.0;
         }
 
+        public void SetProspectingResults(string input, DataGridView dataGrid)
+        {
+            var items = _utilities.ReturnItemListFromString(input);
 
+            var results = new List<Results>();
+
+            foreach (var item in items)
+            {
+                if (item.Name.Trim().ToLower() != "aqirite" && item.Name.ToLower().Trim() != "ironclaw ore")
+                {
+                    continue;
+                }
+                var craftingcost = item.Price * 5;
+                var baseprofit = ReturnAvgPerCraft(item, items);
+
+                var baseProfitIncAH = baseprofit * 0.95;
+
+                var result = new Results
+                {
+                    Name = item.Name,
+                    Tier = item.Tier,
+                    Profit = Math.Round(baseProfitIncAH - craftingcost, 2).ToString(),
+                    Percentage = _utilities.ReturnProfitMarginPercentage(craftingcost, baseprofit)
+
+                };
+                results.Add(result);
+
+            }
+
+            dataGrid.DataSource = results.OrderByDescending(result => _utilities.ParsePercentage(result.Percentage)).ToList();
+        }
 
         private readonly Dictionary<string, List<string>> reagentMappings = new Dictionary<string, List<string>>
         {

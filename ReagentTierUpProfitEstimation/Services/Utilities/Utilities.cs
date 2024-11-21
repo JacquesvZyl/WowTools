@@ -74,6 +74,20 @@ namespace ReagentTierUpProfitEstimation.Services.Utilities
             
         }
 
+        public List<Item> ReturnItemListFromString(string inputString)
+        {
+            // Split the input into lines
+            string[] lines = inputString
+                .Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
+                .Skip(1)
+                .ToArray();
+
+
+            // Parse each line into an Item object
+            List<Item> items = lines.Select(line => ParseLineToItem(line)).ToList();
+            return items;
+        }
+
 
     }
 }
