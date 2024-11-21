@@ -1,17 +1,31 @@
 ﻿using ReagentTierUpProfitEstimation.Models;
+using ReagentTierUpProfitEstimation.Services.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoWTools.Models;
 
 namespace WoWTools.Services.Prospecting
 {
     public class Prospecting : IProspecting
     {
+        private readonly IUtilities _utilities;
+        private readonly ProspectingSettings _settings;
+
+
+        public Prospecting(IUtilities utilities) 
+        {
+            _utilities = utilities;
+            _settings = _utilities.LoadProspectingSettings();
+
+        }
+
 
         public double ReturnAvgPerCraft(Item reagent, List<Item> reagents)
         {
+
             var values = new[]
             {
                 ReturnAvgRareGemPerCraft(reagents),
@@ -32,36 +46,44 @@ namespace WoWTools.Services.Prospecting
             var rareGems = reagents
                 .Where(item => itemsToConsiderNames.Contains(item.Name.ToLower()))
                 .ToList();
-
-            return rareGems.Average(item => item.Price) * 0.566;
+            var yield = _settings.Rare_Gems_Yield;
+            return rareGems.Average(item => item.Price) * yield;
         }
 
         private double ReturnAvgCrushGemstonePerCraft(string tier, List<Item> reagents)
         {
             var gemstone = reagents.Where(c => c.Name.ToLower().Trim() == "crushed gemstones" && c.Tier == tier).FirstOrDefault();
 
-            return gemstone?.Price * 0.116 ?? 0.0;
+            var yield = _settings.Crushed_GemStones_Yield;
+            return gemstone?.Price * yield ?? 0.0;
         }
 
         private double ReturnAvgGlassPerCraft(List<Item> reagents)
         {
             var glass = reagents.Where(c => c.Name.ToLower().Trim() == "glittering glass").FirstOrDefault();
 
-            return glass?.Price * 0.387 ?? 0.0;
+            var yield = _settings.Glittering_Glass_Yield;
+
+            return glass?.Price * yield ?? 0.0;
         }
 
         private double ReturnAvgPebblesPerCraft(List<Item> reagents)
         {
             var pebbles = reagents.Where(c => c.Name.ToLower().Trim() == "handful of pebbles").FirstOrDefault();
 
-            return pebbles?.Price * 1.122 ?? 0.0;
+            var yield = _settings.Handful_of_Pebbles_Yield;
+
+            return pebbles?.Price * yield ?? 0.0;
         }
 
         private double ReturnAvgAmberPerCraft(List<Item> reagents)
         {
+            var yield = _settings.Ambivalent_Amber_Yield;
+
             var amber = reagents.Where(c => c.Name.ToLower().Trim() == "ambivalent amber").FirstOrDefault();
 
-            return amber?.Price * 0.08 ?? 0.0;
+
+            return amber?.Price * yield ?? 0.0;
         }
 
 

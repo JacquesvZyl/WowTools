@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using WoWTools.Models;
 
 namespace ReagentTierUpProfitEstimation.Services.Utilities
 {
     public class Utilities : IUtilities
     {
+        private static readonly string SettingsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "settings.json");
         public Item ParseLineToItem(string line)
         {
             // Split the line by commas, while keeping quotes around names
@@ -49,5 +52,29 @@ namespace ReagentTierUpProfitEstimation.Services.Utilities
                 throw new FormatException("Invalid percentage format.");
             }
         }
+
+        public ProspectingSettings LoadProspectingSettings()
+        {
+            //private static readonly string SettingsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "settings.json");
+
+            if (!File.Exists(SettingsFilePath)) 
+            {
+                throw new FileNotFoundException(SettingsFilePath);
+            }
+
+            string json = File.ReadAllText(SettingsFilePath);
+
+            // Parse the JSON to get the "Prospecting" part
+            using (JsonDocument doc = JsonDocument.Parse(json))
+            {
+                var prospectingJson = doc.RootElement.GetProperty("Prospecting");
+                // Deserialize just the "Prospecting" part into the ProspectingSettings class
+                return JsonSerializer.Deserialize<ProspectingSettings>(prospectingJson.GetRawText());
+            }
+            
+        }
+
+
     }
 }
+
