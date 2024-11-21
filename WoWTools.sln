@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReagentTierUpProfitEstimation", "ReagentTierUpProfitEstimation\ReagentTierUpProfitEstimation.csproj", "{493E41F8-FD86-4774-AF5C-E2733059BDCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoWTools", "ReagentTierUpProfitEstimation\WoWTools.csproj", "{493E41F8-FD86-4774-AF5C-E2733059BDCA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WoWTools", "WoWTools\WoWTools.vdproj", "{5601997F-0667-4067-95D9-AAADEFF3E6C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{493E41F8-FD86-4774-AF5C-E2733059BDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{493E41F8-FD86-4774-AF5C-E2733059BDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{493E41F8-FD86-4774-AF5C-E2733059BDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5601997F-0667-4067-95D9-AAADEFF3E6C7}.Debug|Any CPU.ActiveCfg = Debug
+		{5601997F-0667-4067-95D9-AAADEFF3E6C7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
