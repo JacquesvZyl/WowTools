@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,25 @@ namespace WoWTools.Views.Forms
             _prospecting.SetProspectingResults(prospectingInput.Text, prospectDataGridView);
         }
 
+        private void ProspectingLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = "https://drive.google.com/file/d/1ArHZ39glpLHyXROIBC8AHIVnhETrs7aY/view?usp=drive_link";
+            try
+            {
+                // Open the URL in the default browser
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                // Handle errors, e.g., show a message
+                MessageBox.Show($"Unable to open link: {ex.Message}");
+            }
+
+        }
     }
 }
 

@@ -33,6 +33,7 @@
             prospectDataGridView = new DataGridView();
             label1 = new Label();
             label2 = new Label();
+            ProspectingLink = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)prospectDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -85,12 +86,24 @@
             label2.TabIndex = 5;
             label2.Text = "Profit after Auctionhouse cut";
             // 
+            // ProspectingLink
+            // 
+            ProspectingLink.AutoSize = true;
+            ProspectingLink.Location = new Point(558, 378);
+            ProspectingLink.Name = "ProspectingLink";
+            ProspectingLink.Size = new Size(240, 15);
+            ProspectingLink.TabIndex = 6;
+            ProspectingLink.TabStop = true;
+            ProspectingLink.Text = "Get string for Auctioneer Shopping List Here";
+            ProspectingLink.LinkClicked += ProspectingLink_LinkClicked;
+            // 
             // ProspectingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(810, 402);
+            Controls.Add(ProspectingLink);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(prospectDataGridView);
@@ -110,5 +123,6 @@
         private DataGridView prospectDataGridView;
         private Label label1;
         private Label label2;
+        private LinkLabel ProspectingLink;
     }
 }

@@ -1,6 +1,7 @@
 using ReagentTierUpProfitEstimation.Models;
 using ReagentTierUpProfitEstimation.Services.ReagentRefinement;
 using ReagentTierUpProfitEstimation.Views.UI;
+using System.Diagnostics;
 using System.Globalization;
 using System.Windows.Forms;
 using static ReagentTierUpProfitEstimation.RefinementForm;
@@ -11,7 +12,7 @@ namespace ReagentTierUpProfitEstimation
     {
         private readonly IReagentRefinement _refinement;
         private readonly IUI _ui;
-        public RefinementForm(IReagentRefinement reagentRefinement,IUI uI)
+        public RefinementForm(IReagentRefinement reagentRefinement, IUI uI)
         {
             _refinement = reagentRefinement;
             _ui = uI;
@@ -62,6 +63,25 @@ namespace ReagentTierUpProfitEstimation
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = "https://docs.google.com/document/d/19zSgumJOo6Qfk_4DK8b1cnQ9lRQTpHkIR5GZJkx5nzI/edit?usp=drive_link";
+            try
+            {
+                // Open the URL in the default browser
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                // Handle errors, e.g., show a message
+                MessageBox.Show($"Unable to open link: {ex.Message}");
+            }
         }
     }
 }

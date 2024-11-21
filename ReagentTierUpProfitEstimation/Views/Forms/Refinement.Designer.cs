@@ -36,6 +36,7 @@
             resultViewBefore = new DataGridView();
             label1 = new Label();
             label2 = new Label();
+            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)resultsViewAfter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)resultViewBefore).BeginInit();
             SuspendLayout();
@@ -66,7 +67,7 @@
             MainInputButton.BackColor = Color.DarkOrange;
             MainInputButton.BackgroundImageLayout = ImageLayout.None;
             MainInputButton.FlatStyle = FlatStyle.Popup;
-            MainInputButton.Location = new Point(560, 480);
+            MainInputButton.Location = new Point(560, 476);
             MainInputButton.Name = "MainInputButton";
             MainInputButton.Size = new Size(153, 23);
             MainInputButton.TabIndex = 2;
@@ -113,12 +114,24 @@
             label2.Text = "Profit after Auctionhouse cut";
             label2.Click += label2_Click;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(953, 484);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(225, 15);
+            linkLabel1.TabIndex = 7;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Get Auctionator Shopping List string here";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // RefinementForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
             ClientSize = new Size(1195, 515);
+            Controls.Add(linkLabel1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(resultViewBefore);
@@ -148,5 +161,6 @@
         private DataGridView resultViewBefore;
         private Label label1;
         private Label label2;
+        private LinkLabel linkLabel1;
     }
 }
