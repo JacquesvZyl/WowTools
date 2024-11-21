@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProspectingForm));
             prospectingInput = new RichTextBox();
             prospectingInputBtn = new Button();
             prospectDataGridView = new DataGridView();
@@ -109,6 +110,7 @@
             Controls.Add(prospectDataGridView);
             Controls.Add(prospectingInputBtn);
             Controls.Add(prospectingInput);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ProspectingForm";
             Text = "Prospecting";
             ((System.ComponentModel.ISupportInitialize)prospectDataGridView).EndInit();
