@@ -107,7 +107,7 @@ namespace WoWTools.Services.Prospecting
                     Name = item.Name,
                     Tier = item.Tier,
                     Profit = Math.Round(baseProfitIncAH - craftingcost, 2).ToString(),
-                    Percentage = _utilities.ReturnProfitMarginPercentage(craftingcost, baseprofit)
+                    Percentage = _utilities.ReturnProfitMarginPercentage(craftingcost, baseProfitIncAH)
 
                 };
                 results.Add(result);
